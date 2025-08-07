@@ -4,7 +4,7 @@ A comprehensive role-based dashboard single-page application (SPA) built with Ne
 
 ## 🚀 Live Demo
 
-**Hosted Application**: ['']('')
+**Hosted Application**: ['https://chapa-frontend-interview-assignment-beta.vercel.app/']('https://chapa-frontend-interview-assignment-beta.vercel.app/')
 
 ## 🔑 Demo Accounts
 
