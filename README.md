@@ -54,7 +54,7 @@ This application integrates **3 real Chapa API endpoints**:
 - **Implementation**: `services/chapaService.ts` - `verifyTransaction()`
 - **Features**: verification with loading indicators
 
-### 3. Get Banks (`/banks`)
+### 3. Get Banks (`https://api.chapa.co/v1/banks`)
 - **Used in**: Admin Dashboard
 - **Purpose**: Display supported banks
 - **Implementation**: `https://api.chapa.co/v1/banks`
