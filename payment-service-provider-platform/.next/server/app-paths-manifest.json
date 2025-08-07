@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/api/chapa/initialize/route": "app/api/chapa/initialize/route.js",
+  "/payment-success/page": "app/payment-success/page.js",
+  "/api/chapa/verify/[txRef]/route": "app/api/chapa/verify/[txRef]/route.js"
+}
