@@ -42,11 +42,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
                 <img 
-                  src="/chapa-logo.png" 
+                  src="/header-logo.png" 
                   alt="Chapa Logo" 
-                  className="h-8 w-8 object-contain"
+                  className="h-14 w-18 object-contain"
                 />
-                <h1 className="text-2xl font-bold text-foreground">Chapa</h1>
+          
               </div>
               <span className={`px-2 py-1 rounded-full text-xs font-medium ${getRoleBadgeColor(user?.role || '')}`}>
                 {user?.role?.replace('_', ' ').toUpperCase()}

@@ -75,7 +75,7 @@ export function UserDashboard() {
     txRef: string
   } | null>(null)
   const { toast } = useToast()
-  const [showBalance, setShowBalance] = useState(true)
+  const [showBalance, setShowBalance] = useState(false)
 
   // Simulate data loading
   useEffect(() => {
@@ -643,7 +643,7 @@ export function UserDashboard() {
                   </div>
                   <div className="text-right">
                     <p className="font-medium text-foreground">{transaction.amount} {transaction.currency}</p>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 xs:flex-col sm:flex-row">
                       <Badge className={`text-xs ${getStatusColor(transaction.status)}`}>
                         {transaction.status}
                       </Badge>

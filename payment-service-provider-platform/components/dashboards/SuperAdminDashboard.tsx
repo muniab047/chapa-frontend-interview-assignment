@@ -430,20 +430,23 @@ export function SuperAdminDashboard() {
               {admins.map((admin) => (
                 <div key={admin.id} className="flex items-center justify-between p-3 border rounded-lg">
                   <div className="flex-1">
-                    <div className="flex items-center gap-3">
+                    <div className="flex sm:items-center sm:flex-row sm:flex-row gap-3 xs:flex-col ">
                       <div>
                         <p className="font-medium">{admin.name}</p>
                         <p className="text-sm text-gray-500">{admin.email}</p>
                       </div>
+                      <div> 
                       <Badge variant={admin.role === 'super_admin' ? 'default' : 'secondary'}>
                         {admin.role.replace('_', ' ')}
                       </Badge>
                       <Badge variant={admin.isActive ? "default" : "secondary"}>
                         {admin.isActive ? 'Active' : 'Inactive'}
                       </Badge>
+
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 xs:flex-col sm:flex-row">
                     <Switch
                       checked={admin.isActive}
                       onCheckedChange={() => toggleAdminStatus(admin.id)}
@@ -487,7 +490,7 @@ export function SuperAdminDashboard() {
                           </div>
                           <div className="text-right">
                             <p className="font-medium text-foreground">{transaction.amount} {transaction.currency}</p>
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 xs:flex-col sm:flex-row">
                               <Badge className={`text-xs ${getStatusColor(transaction.status)}`}>
                                 {transaction.status}
                               </Badge>

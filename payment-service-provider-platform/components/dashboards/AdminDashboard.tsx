@@ -83,7 +83,7 @@ export function AdminDashboard() {
     setBanks([])
     
     try {
-      console.log('Loading banks via backend proxy...')
+      console.log('Loading banks...')
       const banksData = await chapaService.getBanks()
       
       console.log('Received banks data:', banksData)
@@ -94,7 +94,7 @@ export function AdminDashboard() {
         
         toast({
           title: "Banks Loaded Successfully! 🏦",
-          description: `Successfully loaded ${banksData.length} supported banks via backend proxy from Chapa API.`,
+          description: `Successfully loaded ${banksData.length} supported banks from Chapa API.`,
         })
       } else if (Array.isArray(banksData) && banksData.length === 0) {
         setBanks([])
@@ -289,12 +289,12 @@ export function AdminDashboard() {
               {users.map((user) => (
                 <div key={user.id} className="flex items-center justify-between p-4 border rounded-lg">
                   <div className="flex-1">
-                    <div className="flex items-center gap-3">
+                    <div className="flex sm:items-center gap-3 xs:flex-col sm:flex-row">
                       <div>
                         <p className="font-medium">{user.name}</p>
                         <p className="text-sm text-gray-500">{user.email}</p>
                       </div>
-                      <Badge variant={userStates[user.id] ? "default" : "secondary"}>
+                      <Badge variant={userStates[user.id] ? "default" : "secondary"} className='max-w-[68px]'>
                         {userStates[user.id] ? 'Active' : 'Inactive'}
                       </Badge>
                     </div>
@@ -329,7 +329,7 @@ export function AdminDashboard() {
                 {getErrorIcon(banksErrorType)}
                 <AlertDescription>
                   <div className="space-y-2">
-                    <p className="font-medium">Failed to load banks via backend proxy</p>
+                    <p className="font-medium">Failed to load banks</p>
                     <p className="text-sm">{getErrorMessage(banksErrorType, banksError)}</p>
                   </div>
                 </AlertDescription>
@@ -341,7 +341,7 @@ export function AdminDashboard() {
               <div className="flex items-center justify-center py-8">
                 <div className="text-center space-y-2">
                   <LoadingSpinner size="md" />
-                  <p className="text-sm text-gray-600">Loading banks via backend proxy...</p>
+                  <p className="text-sm text-gray-600">Loading banks...</p>
                 </div>
               </div>
             ) : (
@@ -358,7 +358,7 @@ export function AdminDashboard() {
                               Code: {bank.swift} | Length: {bank.acct_length} digits
                             </p>
                           </div>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 xs:flex-col sm:flex-row">
                             <Badge variant="outline">{bank.currency}</Badge>
                             {bank.is_24hrs && (
                               <Badge variant="secondary" className="text-xs">24/7</Badge>
@@ -381,7 +381,7 @@ export function AdminDashboard() {
                     <p className="text-lg font-medium mb-2">No Banks Available</p>
                     <p className="text-sm mb-4">
                       {banksError 
-                        ? 'Unable to load banks via backend proxy' 
+                        ? 'Unable to load banks' 
                         : 'No banks data returned from the API'
                       }
                     </p>

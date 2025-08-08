@@ -3,12 +3,18 @@ module.exports = {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}", "*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    screens: {
+      xs: "100px",
+    sm: "500px",
+    md: "768px",
+    lg: "1024px",
+    xl: "1280px",
+      "2xl": "1400px",
+    },
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      
     },
     extend: {
       colors: {
